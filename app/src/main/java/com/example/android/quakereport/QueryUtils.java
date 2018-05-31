@@ -73,13 +73,13 @@ public final class QueryUtils {
                 // Get “properties” JSONObject
                 JSONObject properties = currentEarthquake.getJSONObject("properties");
                 // Extract “mag” for magnitude
-                String magnitude = properties.getString("mag");
+                double magnitude = properties.getDouble("mag");
                 // Extract “time” for time
-                long time = properties.getLong("time");
+                long timeInMilliseconds = properties.getLong("time");
                 // Extract “place” for location
                 String place = properties.getString("place");
                 // Create Earthquake java object from magnitude, location, and time
-                Earthquake earthquake = new Earthquake(magnitude, place, time);
+                Earthquake earthquake = new Earthquake(magnitude, place, timeInMilliseconds);
                 // Add earthquake to list of earthquakes
                 earthquakes.add(earthquake);
 
