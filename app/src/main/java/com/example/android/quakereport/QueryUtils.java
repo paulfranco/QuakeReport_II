@@ -78,8 +78,9 @@ public final class QueryUtils {
                 long timeInMilliseconds = properties.getLong("time");
                 // Extract “place” for location
                 String place = properties.getString("place");
-                // Create Earthquake java object from magnitude, location, and time
-                Earthquake earthquake = new Earthquake(magnitude, place, timeInMilliseconds);
+                String url = properties.getString("url");
+                // Create Earthquake java object from magnitude, location, time, and url
+                Earthquake earthquake = new Earthquake(magnitude, place, timeInMilliseconds, url);
                 // Add earthquake to list of earthquakes
                 earthquakes.add(earthquake);
 
